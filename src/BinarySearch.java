@@ -2,7 +2,9 @@
 class BinarySearch {
     // Returns index of x if it is present in arr[l..
     // r], else return -1
-    int binarySearch(int arr[], int l, int r, int x) {
+
+    // With recursion
+    int binarySearch(int[] arr, int l, int r, int x) {
         if (r >= l) {
             int mid = l + (r - l) / 2;
 
@@ -23,6 +25,21 @@ class BinarySearch {
 
         // We reach here when element is not present
         //  in array
+        return -1;
+    }
+
+    //Without recursion
+    public int binarySeachWithoutRecursion(int[] arr, int low, int high, int ele) {
+        while (low <= high) {
+            int med = (low + high) / 2;
+            if (arr[med] == ele) {
+                return med;
+            } else if (arr[med] > ele) {
+                high = med - 1;
+            } else {
+                low = med + 1;
+            }
+        }
         return -1;
     }
 }

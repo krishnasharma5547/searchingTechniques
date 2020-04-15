@@ -6,7 +6,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         System.out.println("enter size of array: ");
         int size = sc.nextInt();
-        int arr[] = new int[size];
+        int[] arr = new int[size];
         System.out.println("Enter Array Elements: ");
         for (int i = 0; i < size; i++) {
             arr[i] = sc.nextInt();
@@ -19,6 +19,9 @@ public class Main {
         testResult(result);
 
         BinarySearch bs = new BinarySearch();
+        result = bs.binarySeachWithoutRecursion(arr, 0, size - 1, ele);
+        testResult(result);
+
         result = bs.binarySearch(arr, 0, size - 1, ele);
         testResult(result);
     }
